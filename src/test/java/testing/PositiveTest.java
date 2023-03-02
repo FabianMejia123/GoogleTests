@@ -1,6 +1,8 @@
 package testing;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
@@ -24,7 +26,19 @@ public class PositiveTest {
 		driver.get(url);
 
 // sleep for 3 seconds
-		sleep(2000);
+		sleep(3000);
+
+// Accept all cookies
+		WebElement acceptAllBtn = driver.findElement(By.id("L2AGLb"));
+		acceptAllBtn.click();
+		sleep(3000);
+		
+// Search
+		WebElement searchToolBar = driver.findElement(By.className("gLFyf"));
+		searchToolBar.sendKeys("Solera" + "\n");
+		sleep(3000);
+		
+		
 // Close
 		driver.quit();
 
